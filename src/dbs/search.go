@@ -32,12 +32,13 @@ func Search2() {
 		rows.Scan(&name,&password)
 		fmt.Println(name,password)
 	}
+	// return name,password
 }
 
 // 查询单行 使用QueryRow
-func Search3()  {
-	var name,password string
-	rows := MysqlDb.QueryRow("select name,password from register where id=1")
+func Search3(username string)(name string, password string)  {
+	rows := MysqlDb.QueryRow("select name,password from register where name=?",username)
 	rows.Scan(&name,&password)
 	fmt.Println(name,password)
+	return name,password
 }

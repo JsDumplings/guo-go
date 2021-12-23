@@ -1,11 +1,12 @@
 package main
 import (
 	"./dbs"
+	"./https"
 )
 
-func main() {
+// func main() {
 	// 初始化连接数据库
-	dbs.MysqlInit()
+	// dbs.MysqlInit()
 	// 插入数据
 	// dbs.Insert1()
 	// 查询数据
@@ -15,5 +16,12 @@ func main() {
 	// 删除数据
 	// dbs.Delete1()
 	// 更新数据
-	dbs.Updata1()
+	// dbs.Updata1()
+// }
+
+
+func main() {
+	// 初始化连接数据库
+	dbs.MysqlInit()
+	https.ApiIndex()
 }
